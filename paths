@@ -1,0 +1,40 @@
+#!/usr/bin/env zsh
+# |== ZSHRC PATH Enviroment Setup ==| #
+
+# |- Function for PATH management
+# adding paths
+pathadd() {
+    if [[ -d "$1" && ":$PATH:" != *":$1:"* ]]; then
+        export PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+# printing paths with better output - only Zsh compat.
+pathprint() { print -l ${(s/:/)PATH} }
+
+# |- Paths to add to the environment
+
+# General directories
+pathadd "${HOME}/.bin"
+pathadd "${HOME}/.local/bin"
+
+# Custom directories
+pathadd "${HOME}/.local/rilbin"
+pathadd "${HOME}/.local/rilbin/color-scripts"
+pathadd "${HOME}/.local/rilbin/starship"
+pathadd "${HOME}/.local/rilbin/file-management"
+pathadd "${HOME}/Documents/testing"
+pathadd "${HOME}/Repos/scripts-ril"
+pathadd "${HOME}/Repos/scripts-ril/color-scripts"
+
+# Package directories
+pathadd "/usr/local/go/bin"
+pathadd "${HOME}/.local/share/go/bin"
+pathadd "${HOME}/Builds/bat-extras/bin"
+pathadd "${HOME}/.local/share/cargo/bin"
+pathadd "${HOME}/.local/share/npm/bin"
+pathadd "${HOME}/.juliaup/bin"
+
+
+# Vim options ->
+# vim:fileencoding=utf-8:foldmethod=marker
