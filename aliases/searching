@@ -1,0 +1,9 @@
+#!/user/bin/env zsh
+# |== Aliases Related to Searching ==| #
+#
+# Description: Aliases for searching functions, common search, and various ways to find thing
+# on a pc
+
+# |= fonts
+
+alias fzfonts="fc-list | fzf"

@@ -1,0 +1,36 @@
+#!/user/bin/env zsh
+# |== Various Functions for Calculating Values ==| #
+#
+# Description: Functions that calculate values useful throughout bash. These can include sizes,
+# values of command flags, etc.
+
+# |= Calculate good size for recursive tree
+tree-size() {
+    # Arguments
+    if [[ ! -d "${1}" ]]; then
+        dir_name=$(\pwd)
+    else
+        dir_name="${1}"
+    fi
+
+    if [[ -z $2 ]]; then
+        extra_lines="0"
+    else
+        if [[ "$2" =~ ^-?[0-9]+$ ]]; then
+            extra_lines="$2"
+        else
+            extra_lines="0"
+        fi
+    fi
+
+    term_height=$(tput lines)
+    height=$((term_height - extra_lines))
+
+    if [[ $(\eza -I=".git" -Ta -L=2  "$dir_name" | wc -l) -lt "$height" ]]; then
+        echo "2"
+    elif [[ $(\eza -I=".git" -Ta -L=1  "$dir_name" | wc -l) -lt "$height" ]]; then
+        echo "1"
+    else
+        echo "0"
+    fi
+}

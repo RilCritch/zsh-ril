@@ -1,0 +1,43 @@
+#!/user/bin/env zsh
+# |== Functions for Testing Various Things ==| #
+#
+# Description: Farious functions that run tests and filter output based on arguments
+
+# |= Directory tests
+
+# Test if argument is a directory and return user home if empty
+get-dir-h() {
+    if [[ -z "$1" ]]; then
+        echo "${HOME}"
+    else
+        if [[ -d "$1" ]]; then
+            echo "${1}"
+        else
+            echo ""
+        fi
+    fi
+}
+
+# Test if argument is a directory and return pwd if empty
+get-dir-c() {
+    if [[ -z "$1" ]]; then
+        \pwd
+    else
+        if [[ -d "$1" ]]; then
+            echo "${1}"
+        else
+            echo ""
+        fi
+    fi
+}
+
+# |= Number tests
+
+# Test if argument is a number
+is_number() {
+    if [[ "$1" =~ ^-?[0-9]+$ ]]; then
+        echo "0"
+    else
+        echo "1"
+    fi
+}

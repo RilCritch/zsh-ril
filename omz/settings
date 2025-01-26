@@ -1,50 +1,41 @@
 #!/usr/bin/env zsh
-# |== ZSHRC Oh My Zsh Environment Variables ==| #
+# |== ZSHRC Oh My Zsh Settings ==| #
+
+# |= VARIABLES => {{{
 
 # |- Theming 
 
 # Command line prompt theme
 # DEFAULT: ZSH_THEME="robbyrussel"
 # NOTE: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-export ZSH_THEME=""
-
-# |- Directories
-
-# Zsh custom path | def: "${ZSH}/custom
-# Path to define the location of the custom folder
-# useful for moving this folder to a directory with version control
-# export ZSH_CUSTOM=""
-
-# Zsh cache dir 
-# Path for the zsh cache directory. Move if needed
-# export ZSH_CACHE_DIR=""
+ZSH_THEME=""
 
 # |- Completion
 
 # Comp waiting dots
 # indicates that Zsh is processing a completion | def: false
-# export COMPLETION_WAITING_DOTS=true
+# COMPLETION_WAITING_DOTS=true
 
 # Case-sensitive
 # forces completion to be case-sensitive | def: false
-# export CASE_SENSITIVE=true
+# CASE_SENSITIVE=true
 
 # Hyphen insensitive
 # '_' and '-' are interchangeable in completion | def: false
-export HYPHEN_INSENSITIVE=true
+HYPHEN_INSENSITIVE=true
 
 # |- Library Settings
 
 # Disable magice functions (disable if buggy)
 # bracketed-paste-magic and url-quote-magic are two
 # Zsh utilities that are known buggy sometimes | def: true
-# export DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Enable correction (setopt correct_all)
 # Zsh attempts to correct command and file names passed as arguments
 # commands excluded from correction: 
 # cp, ebuild, gist, heroku, hpodder, man, mkdir, mv, mysql, sudo
-# export ENABLE_CORRECTION=true
+# ENABLE_CORRECTION=true
 
 # Disable untracked files dirty
 # Disable marking untracked files under VCS as dirty | def: false
@@ -57,4 +48,32 @@ export HYPHEN_INSENSITIVE=true
 # Allows you to enable and format time stamps on command history
 HIST_STAMPS="yyyy-mm-dd"
 
+# }}}
 
+# |= ZSTYLE => {{{
+
+# |- OMZ Update Settings
+
+zstyle ':omz:update' mode prompt
+zstyle ':omz:update' frequency 15 # days
+zstyle ':omz:update' verbosity default
+
+# |- OMZ Alias Settings
+
+# Skip all aliases, in lib files and enabled plugins
+# zstyle ':omz:*' aliases no
+
+# Skip all aliases in lib files
+zstyle ':omz:lib:*' aliases no
+# Skip only aliases defined in the directories.zsh lib file
+# zstyle ':omz:lib:directories' aliases no
+
+# Skip all plugin aliases
+# zstyle ':omz:plugins:*' aliases no
+# Skip only the aliases from the git plugin
+# zstyle ':omz:plugins:git' aliases no
+
+# }}}
+
+
+# vim:fileencoding=utf-8:foldmethod=marker

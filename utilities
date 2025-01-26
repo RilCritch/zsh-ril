@@ -1,0 +1,35 @@
+#!/user/bin/env zsh
+# |== Utility Functions for Zsh Config ==| #
+#
+# Description: Various functions to help with zsh config
+
+# |= Source if file exists
+function src_with_test() { # argument(1): STR => path to file
+    file_path="$1"
+
+    # Test if path is file and source if it is
+    if [[ -f "${file_path}" ]]; then
+        source "${file_path}"
+        return 0
+    else
+        return 1
+    fi
+}
+
+# |= Source all files in a directory
+function src_directory() { # arguments(1): STR => dir name (relative or absolute paths)
+    # Handle directory arg
+    dir_arg="$1"
+    dir_path=$(resolve-dir "${dir_arg}")
+    # Test for errors in argument handling (must be directory)
+    if [[ $? -ne 0 ]]; then
+        return 1
+    fi
+
+    # Source all files in the directory
+    for file in "${dir_path}"/*; do
+        if [[ -f "${file}" ]]; then
+            src_with_test "${file}"
+        fi
+    done
+}

@@ -1,0 +1,31 @@
+#!/user/bin/env zsh
+# |== UI Aliases ==| #
+#
+# Description: aliases for easily making the terminal prettier
+
+# |= Screen Savers
+
+alias rmatrix='cxxmatrix --frame-rate 45 --no-diffuse --preserve-background'
+
+# |= Pretty output
+
+alias lineacross='across-line'
+alias sparky='wave-spark'
+
+# |= Clear
+
+alias cc='clear'
+alias cca='clear &&'
+alias c="clear && sparky | clr blackL && lineacross | clr blackL"
+alias ca="clear && sparky | clr blackL && lineacross | clr blackL &&"
+alias cr="clear && sparky | clr blackL && repo-header"
+alias cra="clear && sparky | clr blackL && repo-header &&"
+
+# |= Coloring commands
+alias pwd="pwd | clr cyan"
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias rg="rg --sort path" # search content with ripgrep
+
+# vim:fileencoding=utf-8:foldmethod=marker

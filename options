@@ -1,0 +1,7 @@
+#!/user/bin/env zsh
+# |== ZSH Options ==| #
+#
+# Description: Configuration for the ZSH options
+
+# |= Expansion and Globbing
+setopt nullglob
