@@ -1,9 +1,0 @@
-#!/user/bin/env zsh
-# |== Aliases Related to File Editing ==| #
-#
-# Description: Aliases for text editors, specific files, and other utilities for file editing
-
-# |= Neovim
-
-alias nv='nvim'
-alias sudonv='sudo -E -s nvim' # edit root protected files with nvim configuration

@@ -1,0 +1,21 @@
+#!/user/bin/env zsh
+# |== Common Tasks ==| #
+#
+# Description: Various command or multi command statements that I use often.
+# Shortening up commands of tasks I perform often.
+
+# |= Refreshing
+
+# shell
+alias sb="source ${HOME}/.zshrc"
+alias csb="clear && source ${HOME}/.zshrc"
+
+# |= Cleaning directories
+
+# neovim swap
+alias rmswap="rm $HOME/.local/state/nvim/swap/*"
+
+# |= Updating
+
+# apt
+alias aptup="sudo nala update && sudo nala upgrade"

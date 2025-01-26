@@ -1,0 +1,34 @@
+#!/user/bin/env zsh
+# |== File Related Aliases ==| #
+#
+# Description: Aliases related to various file operations. Include dir navigation, file mgmt,
+# file editing, version control, file info, etc.
+
+# |= Fuzzy directory navigation
+
+alias r='d /home/rc/Repos'
+
+# |= File management
+
+alias fm="nvim -c Oil"
+
+# |= File and directory command common flags
+
+alias cpr="cp -r"
+alias rmr="rm -r"
+alias rmrf="rm -rf"
+alias md="mkdir -p"
+
+# |= Git management systems
+
+alias lg="lazygit"
+
+# |= Git statuses
+
+alias gll="gita ll"
+alias gls="gfold | grep -vi 'rilcritch'"
+
+# |= Neovim
+
+alias nv='nvim'
+alias sudonv='sudo -E -s nvim' # edit root protected files with nvim configuration
