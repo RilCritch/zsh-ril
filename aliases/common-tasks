@@ -9,6 +9,9 @@
 # shell
 alias sb="source ${HOME}/.zshrc"
 alias csb="clear && source ${HOME}/.zshrc"
+alias tobash="sudo chsh $USER -s /usr/bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh $USER -s /usr/bin/zsh && echo 'Now log out.'"
+
 
 # |= Cleaning directories
 

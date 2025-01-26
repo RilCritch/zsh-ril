@@ -34,7 +34,22 @@ export ZSH_CUSTOM="${ZSH_PATH}/omz/custom"
 # see: https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 plugins=(
 	# bundled plugins
-	
+    colored-man-pages
+    # alias-finder
+    command-not-found
+    copyfile
+    copypath
+    extract
+    # fzf
+    # globalias
+    # jump
+    man
+    sudo
+    # thefuck
+    # tldr
+    # vi-mode
+    zsh-interactive-cd
+
 	# 3rd party plugins
 )
 
@@ -59,5 +74,8 @@ src_directory "${ZSH_PATH}/functions"
 
 # Aliases
 src_directory "${ZSH_PATH}/aliases"
+
+# Starship
+eval "$(starship init zsh)"
 
 # vim:fileencoding=utf-8:foldmethod=marker
