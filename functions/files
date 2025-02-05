@@ -1,0 +1,16 @@
+#!/user/bin/env zsh
+# |== ZSH File Related Functions ==| #
+#
+# Description: Functions related to file manipulation, creation, etc.
+
+# |= Templates
+
+cptmpl() { # ARGS(2): 1: STR => template 2: STR => name
+    if tmpl_dir=$(xdg-user-dir TEMPLATES 2>/dev/null) && \
+    [[ -n "${tmpl_dir}" ]]; then
+        template_path=$(resolve_file "${tmpl_dir}/${1}") || return 2
+        cp "${template_path}" $(resolve_path "${2}") || return 2
+    else
+        echo -e "${red}ERROR:${reset} the TEMPLATES dir coudl not be found with xdg-user-dirs"
+    fi
+}

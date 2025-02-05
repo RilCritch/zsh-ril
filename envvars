@@ -20,16 +20,12 @@ export LANG=en_US.UTF-8
 ## RilCritch's Environment {{{
 
 # Directories
-export RCS_DIR="${HOME}/.local/share/rc-scripts" #: RC Scripts data location
-export RCS_BIN_DIR="${HOME}/.local/bin"
+# export RCS_BIN_DIR="${HOME}/.local/bin"
 export BASH_HOME="${HOME}/Repos/bash-ril"
 export ZSH_HOME="${HOME}/Repos/zsh-ril"
 
 # User info
-export RCS_NAME="RilCritch" #: preferred name
-
-# Git info
-export RCS_GIT_USERNAME="${RCS_NAME}"
+export PREF_NAME="RilCritch" #: preferred name
 
 # }}}
 
@@ -48,6 +44,7 @@ export MOST_INITFILE="$HOME/.config/most/most.rc" # most config
 export RIPGREP_CONFIG_PATH="${HOME}/.config/ripgrep/rg.conf" # ripgrep config
 export NVM_DIR="$HOME/.config/nvm"
 export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
+export EZA_CONFIG_DIR="${HOME}/.config/eza"
 
 # }}}
 
@@ -60,7 +57,7 @@ export STARSHIP_LOG="error"
 
 ## Move files from $HOME {{{
 
-export HISTFILE="${XDG_STATE_HOME}/bash/history"
+export HISTFILE="${XDG_DATA_HOME}/zsh/history"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
@@ -87,7 +84,7 @@ export FZF_DEFAULT_OPTS="--header-first \
 --reverse --border-label-pos=2 -i \
 --cycle \
 --no-scrollbar --border --height=~60% \
---prompt='󰍉 ' --pointer='' --marker='󰮺' \
+--prompt='󰍉 ' --pointer='' --marker='◦' \
 --color='\
 fg:black,fg+:-1,preview-fg:white,\
 bg:-1,bg+:-1,preview-bg:-1,\

@@ -3,33 +3,36 @@
 #
 # Description: Various functions to help with zsh config
 
-# |= Source if file exists
-function src_with_test() { # argument(1): STR => path to file
-    file_path="$1"
+# |= Path testing
 
-    # Test if path is file and source if it is
-    if [[ -f "${file_path}" ]]; then
-        source "${file_path}"
-        return 0
-    else
-        return 1
-    fi
+# Resolve paths
+resolve_path() { # ARGS(1): STR => dir or file path (relative or absolute)
+    command -v realpath >/dev/null 2>&1 || \
+        { echo -e "${red}ERROR:${reset} realpath is not installed" >&2; return 1; }
+    realpath "$1" 2>/dev/null || \
+        { echo -e "${red}ERROR:${reset} '${1}' does not a valid path" >&2; return 2; }
+}
+# Resolving and checking for path types
+resolve_dir() {
+    dir_path=$(resolve_path "${1}") || return 1
+    [[ -d "${dir_path}" ]] && echo "${dir_path}" \
+        || { echo -e "${red}ERROR:${reset} '${1}' is not a directory" >&2; return 2; }
+}
+resolve_file() {
+    file_path=$(resolve_path "${1}") || return 1
+    [[ -f "${file_path}" ]] && echo "${file_path}" \
+        || { echo -e "${red}ERROR:${reset} '${1}' is not a file" >&2; return 2; }
 }
 
+
 # |= Source all files in a directory
-function src_directory() { # arguments(1): STR => dir name (relative or absolute paths)
+src_directory() { # ARGS(1): STR => dir name (relative or absolute)
     # Handle directory arg
-    dir_arg="$1"
-    dir_path=$(resolve-dir "${dir_arg}")
-    # Test for errors in argument handling (must be directory)
-    if [[ $? -ne 0 ]]; then
-        return 1
-    fi
+    dir_path=$(resolve_dir "$1")
+    [[ $? -ne 0 ]] && return 1 # return error if not dir
 
     # Source all files in the directory
     for file in "${dir_path}"/*; do
-        if [[ -f "${file}" ]]; then
-            src_with_test "${file}"
-        fi
+        [[ -f "${file}" ]] && src "${file}"
     done
 }

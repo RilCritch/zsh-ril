@@ -1,0 +1,7 @@
+#!/user/bin/env zsh
+# |== Functions Related to Accessing Help Quickly ==| #
+#
+# Description: Functions that allow me to view help fast
+
+# |= Script Help
+alias helptest="man zshmisc | less +/CONDITIONAL\ EXPRESSIONS"

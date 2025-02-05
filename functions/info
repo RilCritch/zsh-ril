@@ -1,0 +1,30 @@
+#!/user/bin/env zsh
+# |== Functions for Search and Gathering Information ==| #
+#
+# Description: Various functions that allow me to quickly search and/or access information about my system.
+#              Notably, many of these functions utilize fzf for easy fuzzy searching
+
+# |= Environment
+
+# Searching and view environment variables
+envfzf() {
+    env_var_choices=($(printenv | \
+        awk -F'=' '{print $1}' | sort | \
+        fzf --multi --border-label=" Environment Variables "))
+
+    [[ -z "${env_var_choices}" ]] && return 0
+    (( ${#env_var_choices} != 1 )) && \
+        echo -e "\n${yl}Environment Variable Values ${l_bk}(${#env_var_choices})${yl}:${cR}" || echo
+
+    max_length=0
+    for var_name in "${env_var_choices[@]}"; do
+        (( ${#var_name} > max_length )) && max_length=${#var_name}
+    done
+    for var_name in "${env_var_choices[@]}"; do
+        var_value=$(echo "${(P)var_name}")
+
+        printf "${bl}%-${max_length}s ${l_bk}=> ${l_gn}%s\n${cR}" \
+            "${var_name}" "${var_value}"
+    done
+    echo
+}

@@ -12,6 +12,16 @@ alias csb="clear && source ${HOME}/.zshrc"
 alias tobash="sudo chsh $USER -s /usr/bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh $USER -s /usr/bin/zsh && echo 'Now log out.'"
 
+# |= Navigation
+
+# general
+alias ..="cd .."
+
+# specific directories
+alias b="cd ${HOME}"
+alias t="cd ${HOME}/Documents/testing && clear && sparky | clr red && lineacross | clr black && dir-overview"
+alias .c="cd ${HOME}/.config"
+
 
 # |= Cleaning directories
 
@@ -21,4 +31,7 @@ alias rmswap="rm $HOME/.local/state/nvim/swap/*"
 # |= Updating
 
 # apt
-alias aptup="sudo nala update && sudo nala upgrade"
+alias aptup="sudo apt update && sudo apt upgrade"
+
+# |= Testing
+alias omp-th="source /home/rc/Repos/scripts-ril/omp-theme"

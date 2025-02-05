@@ -1,0 +1,16 @@
+#!/user/bin/env zsh
+# |== Package Management Functions ==| #
+#
+# Description: Various functions that make dealing with packages and
+# package managers easier. Various functions that improve the workflow
+# for managing and investigating packages the various package managers.
+
+# |= Installing Packages =>
+ddf() {
+	choice=$(apt-cache -n search '.*' | awk -F ' - ' '{print $1}' | fzf --height=100% --header-first --reverse --prompt='▶ ' --pointer='󱦰' --multi --preview-window="down" --preview 'apt show {}')
+
+	if [ -n "$choice" ]; then
+		echo "Installing ${choice}" | clr cyan
+	    sudo nala install "${choice}"
+	fi
+}

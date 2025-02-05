@@ -46,6 +46,7 @@ dir-overview() {
 
         across-line | clr blackL
 
+        echo -e "${reset}"
         eza -a --group-directories-first -I=".git" "$dir_path"
     else
         echo -en "${cyan}  "

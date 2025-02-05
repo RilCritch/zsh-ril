@@ -1,0 +1,17 @@
+#!/user/bin/env zsh
+# |== List Specific Directory Functions ==| #
+#
+# Description: Functions for listing directories that I want to view often.
+#              Notably, these are handy for listing the dirs from anywhere
+
+# |= Utility Directories
+
+lstmpl () { # list templates directory if available via xdg-user-dirs
+    if tmpl_dir=$(xdg-user-dir TEMPLATES 2>/dev/null) && \
+    [[ -n "${tmpl_dir}" ]]; then
+        echo -e "${cyan}Templates:${reset}"
+        ls -T "${tmpl_dir}" | awk 'NR > 1'
+    else
+        echo -e "${red}ERROR:${reset} the TEMPLATES dir could not be found with xdg-user-dirs" && return 2
+    fi
+}

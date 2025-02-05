@@ -1,0 +1,7 @@
+#!/user/bin/env zsh
+# |== Startup / Welcome Script ==| #
+#
+# Description: A script to handle start up welcome message. Rules in place to handle
+#              various situations and terminal size
+
+# |= Section one

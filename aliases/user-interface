@@ -1,7 +1,7 @@
 #!/user/bin/env zsh
 # |== UI Aliases ==| #
 #
-# Description: aliases for easily making the terminal prettier
+# Description: aliases to make terminal output prettier and/or cleaner
 
 # |= Screen Savers
 
@@ -27,5 +27,8 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias rg="rg --sort path" # search content with ripgrep
+
+# |= Cleaner Output
+alias printpath="echo $PATH | tr ':' '\\n' | sort"
 
 # vim:fileencoding=utf-8:foldmethod=marker
