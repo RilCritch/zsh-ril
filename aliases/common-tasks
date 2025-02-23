@@ -7,10 +7,10 @@
 # |= Refreshing
 
 # shell
-alias sb="source ${HOME}/.zshrc"
-alias csb="clear && source ${HOME}/.zshrc"
-alias tobash="sudo chsh $USER -s /usr/bin/bash && echo 'Now log out.'"
-alias tozsh="sudo chsh $USER -s /usr/bin/zsh && echo 'Now log out.'"
+alias sb="source ${ZDOTDIR}/.zshrc"
+alias csb="clear && source ${ZDOTDIR}/.zshrc"
+alias tobash="sudo chsh ${USER} -s /usr/bin/bash && echo 'Now log out.'"
+alias tozsh="sudo chsh ${USER} -s /usr/bin/zsh && echo 'Now log out.'"
 
 # |= Navigation
 
@@ -28,10 +28,6 @@ alias .c="cd ${HOME}/.config"
 # neovim swap
 alias rmswap="rm $HOME/.local/state/nvim/swap/*"
 
-# |= Updating
-
-# apt
-alias aptup="sudo apt update && sudo apt upgrade"
-
 # |= Testing
+#
 alias omp-th="source /home/rc/Repos/scripts-ril/omp-theme"

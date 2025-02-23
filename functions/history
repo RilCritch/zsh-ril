@@ -1,0 +1,23 @@
+#!/user/bin/env zsh
+# |== Functions Related to History ==| #
+#
+# Description: Functions for searching and using shell history
+
+# |= Searching
+
+# basic
+function h() {
+    # check if we passed any parameters
+    if [ -z "$*" ]; then
+        # if no parameters were passed print entire history
+        history 1
+    else
+        # if words were passed use it as a search
+        history 1 | egrep --color=auto "$@"
+    fi
+}
+
+# fzf
+function fh() {
+    eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}

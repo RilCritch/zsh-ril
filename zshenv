@@ -1,33 +1,35 @@
 #!/user/bin/env zsh
-# |== ZSHRC Evironment Variables ==| #
+# |== ZSH Evironment ==| #
 
-# environment variables for bashrc
+# ZSH Evironment -> the first file to run in the user zsh startup files
 #
 # author: RilCritch
 
-## ZSH Base {{{
+## Base Enviroment
+
+## ZSH
+export ZDOTDIR="${HOME}/.config/zsh"
+export HISTFILE="${ZDOTDIR}/history"
 
 ## General
 export EDITOR='nvim'
 export VISUAL='nvim'
-export HISTCONTROL=ignoreboth:erasedups
 export LANG=en_US.UTF-8
+export MANPAGER="page -t man" # neovim as man pager
+# export HISTCONTROL=ignoreboth:erasedups
 # export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # man 2 select
 
-#}}}
 
-## RilCritch's Environment {{{
+## RilCritch's Environment
 
 # Directories
-# export RCS_BIN_DIR="${HOME}/.local/bin"
 export BASH_HOME="${HOME}/Repos/bash-ril"
 export ZSH_HOME="${HOME}/Repos/zsh-ril"
 
 # User info
-export PREF_NAME="RilCritch" #: preferred name
+export USER_NAME="RilCritch" #: preferred name
 
-# }}}
 
 ## XDG Directories {{{
 
@@ -57,7 +59,6 @@ export STARSHIP_LOG="error"
 
 ## Move files from $HOME {{{
 
-export HISTFILE="${XDG_DATA_HOME}/zsh/history"
 export CARGO_HOME="${XDG_DATA_HOME}/cargo"
 export RUSTUP_HOME="${XDG_DATA_HOME}/rustup"
 export GNUPGHOME="${XDG_DATA_HOME}/gnupg"
@@ -119,7 +120,7 @@ export WORKON_HOME="$HOME/documents/programming/pyenvs"
 
 # }}}
 
-export GDK_DPI_SCALE=0.5
-export QT_FONT_DPI=96
+# export GDK_DPI_SCALE=0.5
+# export QT_FONT_DPI=96
 
 # vim:fileencoding=utf-8:foldmethod=marker

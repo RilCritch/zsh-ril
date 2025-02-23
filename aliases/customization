@@ -1,0 +1,10 @@
+#!/user/bin/env zsh
+# |== Aliases for Shell and Terminal Customization ==| #
+#
+# Description: Aliases for customizing the shell and terminal. Making changes to the configuration, the environment, etc.
+#              that change the behavior, look, and other things about the shell and terminal.
+
+# |= Shell Changes
+
+# Oh My Posh Theme
+alias chg-zsh-theme="omp-theme && source ${HOME}/.zshrc"

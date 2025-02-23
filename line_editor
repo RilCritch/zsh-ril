@@ -1,0 +1,24 @@
+#!/user/bin/env zsh
+# |== ZSH Line Editor Configurations ==| #
+#
+# Description: Various line editor configuration options and scripts. Along with related keybindings
+
+# |= General Movement Setup
+
+# Vi mode
+
+bindkey -v
+
+# |= Aliases
+
+# alias expansion
+# globalias() {
+#     zle _expand_alias
+#     zle expand-word
+#     zle self-insert
+# }
+# zle -N globalias
+
+# expand with ctrl+space
+# bindkey -M emacs "^ " globalias
+# bindkey -M viins "^ " globalias

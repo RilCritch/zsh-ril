@@ -1,0 +1,13 @@
+#!/user/bin/env zsh
+# |== Aliases For Package Managers ==| #
+#
+# Description: Various aliases for common package / package manager tasks
+
+# |= Apt - all packages
+alias aptup="sudo apt-get update && sudo apt-get upgrade"
+alias aptupfull="sudo apt-get update && sudo apt-get dist-upgrade"
+
+# |= Cargo
+alias carup="cargo install-update" # specific packages
+alias carupall="cargo install-update -a" # update all packages
+

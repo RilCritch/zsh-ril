@@ -16,10 +16,10 @@ alias sparky='wave-spark'
 
 alias cc='clear'
 alias cca='clear &&'
-alias c="clear && sparky | clr blackL && lineacross | clr blackL"
-alias ca="clear && sparky | clr blackL && lineacross | clr blackL &&"
-alias cr="clear && sparky | clr blackL && repo-header"
-alias cra="clear && sparky | clr blackL && repo-header &&"
+alias c="clear && sparky | clr black && lineacross | clr black"
+alias ca="clear && sparky | clr black && lineacross | clr black &&"
+alias cr="clear && sparky | clr black && repo-header"
+alias cra="clear && sparky | clr black && repo-header &&"
 
 # |= Coloring commands
 alias pwd="pwd | clr cyan"
@@ -30,5 +30,6 @@ alias rg="rg --sort path" # search content with ripgrep
 
 # |= Cleaner Output
 alias printpath="echo $PATH | tr ':' '\\n' | sort"
+alias printfpath="echo $FPATH | tr ':' '\\n' | sort"
 
 # vim:fileencoding=utf-8:foldmethod=marker
