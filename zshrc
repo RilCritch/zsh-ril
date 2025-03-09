@@ -74,7 +74,7 @@ src "${ZSH_PATH}/line_editor"
 src_directory "${ZSH_PATH}/plugins"
 
 # Prompts
-eval "$(oh-my-posh init zsh --config /home/rc/.config/oh-my-posh/rc-test.omp.toml)"
+eval "$(oh-my-posh init zsh --config /home/rc/.config/oh-my-posh/rc.omp.toml)"
 
 # Key Env Vars
 export HISTSIZE=10000
