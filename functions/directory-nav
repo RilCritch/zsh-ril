@@ -53,6 +53,5 @@ d () {
         fi
 
             dir-overview . "${extra_lines}"
-            echo
     fi
 }
