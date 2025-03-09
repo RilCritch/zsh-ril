@@ -7,4 +7,4 @@
 # |= Shell Changes
 
 # Oh My Posh Theme
-alias chg-zsh-theme="omp-theme && source ${HOME}/.zshrc"
+alias chg-zsh-theme="omp-theme && source ${ZDOTDIR:-~}/.zshrc"

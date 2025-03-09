@@ -26,6 +26,7 @@ export MANPAGER="page -t man" # neovim as man pager
 # Directories
 export BASH_HOME="${HOME}/Repos/bash-ril"
 export ZSH_HOME="${HOME}/Repos/zsh-ril"
+export ZPLUGINS="${ZSH_HOME}/plugins"
 
 # User info
 export USER_NAME="RilCritch" #: preferred name
@@ -67,7 +68,8 @@ export GTK2_RC_FILES="${XDG_CONFIG_HOME}/gtk-2.0/gtkrc"
 export JULIA_DEPOT_PATH="${XDG_DATA_HOME}/julia:${JULIA_DEPOT_PATH}"
 export ICEAUTHORITY="${XDG_CACHE_HOME}/ICEauthority"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
-export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
+# export PYTHONSTARTUP="${XDG_CONFIG_HOME}/python/pythonrc"
+export ANTITODE_HOME="${XDG_CACHE_HOME}/antitode"
 
 #}}}
 

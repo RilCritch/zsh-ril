@@ -16,8 +16,8 @@ alias ls='eza -l --group-directories-first --no-permissions --no-filesize --icon
 alias sl='eza -l --group-directories-first --no-permissions --no-filesize --icons --no-user --grid'
 alias lsa='eza -la --group-directories-first --no-permissions --no-filesize --icons --no-user --grid'
 
-alias ll='eza -l --group-directories-first'
-alias lla='eza -la --group-directories-first'
+alias ll='eza -l --group-directories-first --hyperlink'
+alias lla='eza -la --group-directories-first --hyperlink'
 
 # Directories only listing
 alias ld='eza -D --icons'

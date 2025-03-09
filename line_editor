@@ -22,3 +22,6 @@ bindkey -v
 # expand with ctrl+space
 # bindkey -M emacs "^ " globalias
 # bindkey -M viins "^ " globalias
+
+# |= Unbind Unwanted Shell Bindings
+bindkey -r '^L'

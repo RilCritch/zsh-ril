@@ -7,8 +7,8 @@
 # |= Refreshing
 
 # shell
-alias sb="source ${ZDOTDIR}/.zshrc"
-alias csb="clear && source ${ZDOTDIR}/.zshrc"
+alias sb="exec zsh"
+alias csb="clear && exec zsh"
 alias tobash="sudo chsh ${USER} -s /usr/bin/bash && echo 'Now log out.'"
 alias tozsh="sudo chsh ${USER} -s /usr/bin/zsh && echo 'Now log out.'"
 
@@ -18,9 +18,10 @@ alias tozsh="sudo chsh ${USER} -s /usr/bin/zsh && echo 'Now log out.'"
 alias ..="cd .."
 
 # specific directories
-alias b="cd ${HOME}"
+alias h="cd ${HOME}"
 alias t="cd ${HOME}/Documents/testing && clear && sparky | clr red && lineacross | clr black && dir-overview"
 alias .c="cd ${HOME}/.config"
+alias ffcss="cd ${HOME}/.mozilla/firefox/m58ypo9o.default-release/chrome"
 
 
 # |= Cleaning directories

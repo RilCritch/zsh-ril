@@ -7,3 +7,12 @@
 # |= fonts
 
 alias fzfonts="fc-list | fzf"
+
+# |= Command Info
+
+# Which command
+if test -n "$ZSH_VERSION"; then
+    alias which="whence -v"
+else
+    alias which="which -a"
+fi

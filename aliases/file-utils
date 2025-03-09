@@ -15,9 +15,16 @@ alias fm="nvim -c Oil"
 # |= File and directory command common flags
 
 alias cpr="cp -r"
-alias rmr="rm -r"
-alias rmrf="rm -rf"
+# alias rmr="rm -r"
+# alias rmrf="rm -rf"
 alias md="mkdir -p"
+
+# |= Trash
+alias tm="trash-put"
+alias te="trash-empty"
+alias tl="trash-list"
+alias trs="trash-restore"
+alias trm="trash-rm"
 
 # |= Git management systems
 

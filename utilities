@@ -24,7 +24,6 @@ resolve_file() {
         || { echo -e "${red}ERROR:${reset} '${1}' is not a file" >&2; return 2; }
 }
 
-
 # |= Source all files in a directory
 src_directory() { # ARGS(1): STR => dir name (relative or absolute)
     # Handle directory arg
@@ -36,3 +35,8 @@ src_directory() { # ARGS(1): STR => dir name (relative or absolute)
         [[ -f "${file}" ]] && src "${file}"
     done
 }
+
+# |= Add path to zsh fpath
+# add_fpath() { # ARGS(1): STR => dir path name (relative or absolute)
+#
+# }

@@ -6,7 +6,7 @@
 # |= Searching
 
 # basic
-function h() {
+function hist() {
     # check if we passed any parameters
     if [ -z "$*" ]; then
         # if no parameters were passed print entire history
@@ -18,6 +18,6 @@ function h() {
 }
 
 # fzf
-function fh() {
+function fhist() {
     eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
 }
